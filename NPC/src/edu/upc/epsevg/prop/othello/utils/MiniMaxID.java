@@ -126,9 +126,11 @@ public class MiniMaxID {
             for (Point moviment : movPossibles) {
                 GameStatusNPC nouT = new GameStatusNPC(gs);
                 nouT.movePiece(moviment); PROF_ASSOLIDA = prof + 1;
-                Integer fHMAX = MaxValor(nouT, prof + 1, alpha, beta); 
-                cActual = Math.min(cActual, (fHMAX == null) ? cActual : fHMAX);
-                beta = Math.min(cActual, beta); if (alpha >= beta) break; 
+                Integer fHMAX = MaxValor(nouT, prof + 1, alpha, beta);
+                if(fHMAX != null) {
+                    cActual = Math.min(cActual, fHMAX);
+                    beta = Math.min(cActual, beta); if (alpha >= beta) break; 
+                } else return null;
             }
         }
 
@@ -170,8 +172,10 @@ public class MiniMaxID {
                 GameStatusNPC nouT = new GameStatusNPC(gs);
                 nouT.movePiece(moviment); PROF_ASSOLIDA = prof + 1;
                 Integer fHMIN = MinValor(nouT, prof + 1, alpha, beta);
-                cActual = Math.max(cActual, (fHMIN == null) ? cActual : fHMIN); 
-                alpha = Math.max(cActual, alpha); if (alpha >= beta) break;
+                if(fHMIN != null){
+                    cActual = Math.max(cActual, fHMIN); 
+                    alpha = Math.max(cActual, alpha); if (alpha >= beta) break;
+                } else return null;
             }
         }
 
