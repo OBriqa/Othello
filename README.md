@@ -7,4 +7,4 @@ Utilitzarem tant la poda alfa-beta (alpha-beta prunning) com l'Iterative Deepeni
 
 Per l'heurística hem emprat una ponderació estàtica de les posicions del tauler d'Othello.
 
-Pràctica realitzada per Joaquim Hervás i Omar Briqa.
+Pràctica realitzada per [Joaquim Hervás](https://github.com/Hospuntake) i Omar Briqa.
